@@ -102,3 +102,29 @@ for(i=0;i<n;i++)
 p1[i].tat=p1[i].wt+p1[i].bt;
 atat+=p1[i].tat;
 }
+atat=atat/n;
+printf("\nThe Process Information:");
+printf("\nPid\tAt\tBt\tWt\tTat");
+for(i=0;i<n;i++)
+{
+printf("\n%d\t%d\t%d\t%d\t%d",p1[i].pid,p1[i].at,p1[i].bt,p1[i].wt,p1[i].tat);
+}
+printf("\nAverage Waiting Time       :%f",awt);
+printf("\nAverage Turn Around Time   :%f",atat);
+}
+int minimum1()
+{
+int loc,z;
+int mini;
+mini=99;
+loc=-1;
+for(z=0;z<n;z++)
+{
+if(p1[z].rbt>0&&p1[z].at<=i&&p1[z].rbt<mini)
+{
+mini=p1[z].rbt;
+loc=z;
+}
+}
+return loc;
+}
